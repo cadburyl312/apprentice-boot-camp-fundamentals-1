@@ -17,7 +17,7 @@ public class Deck {
         }
     }
 
-    void addCard(int index, PlayingCard card) {
+    public void addCard(int index, PlayingCard card) {
         deck[index] = card;
     }
 
