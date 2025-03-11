@@ -2,9 +2,9 @@ package cards;
 
 public class PlayingCard {
     final private String suit;
-    final private int faceValue;
+    final private String faceValue;
 
-    public PlayingCard(String suit, int faceValue) {
+    public PlayingCard(String suit,String faceValue) {
         this.suit = suit;
         this.faceValue = faceValue;
     }
@@ -14,7 +14,7 @@ public class PlayingCard {
     }
 
 
-    public int getFaceValue() {
+    public String getFaceValue() {
         return faceValue;
     }
 
