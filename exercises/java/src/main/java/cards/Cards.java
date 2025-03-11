@@ -12,18 +12,18 @@ public class Cards {
 
     public String[] getCards() {
         String[] result = new String[52];
-        PlayingCard[] deck = new PlayingCard[52];
+        Deck deck = new Deck();
 
         int count = 0;
         for (Suit suit : Suit.values()) {
             for (int faceValue = 0; faceValue < 13; faceValue++) {
-                deck[count] = new PlayingCard(suit.getName(), faceValue);
+                deck.addCard(count, new PlayingCard(suit.getName(), faceValue));
                 count++;
             }
         }
 
         int cardNumber = 0;
-        for (PlayingCard playingCard : deck) {
+        for (PlayingCard playingCard : deck.getDeck()) {
             String faceValueName;
             switch (playingCard.getFaceValue()){
                 case 0: faceValueName = "ace"; break;
