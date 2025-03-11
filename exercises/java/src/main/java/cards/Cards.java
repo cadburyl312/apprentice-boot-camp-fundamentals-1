@@ -14,19 +14,9 @@ public class Cards {
         String[] result = new String[52];
         Deck deck = new Deck();
 
-        int count = 0;
-        for (Suit suit : Suit.values()) {
-            for (FaceValue value : FaceValue.values()) {
-                deck.addCard(count, new PlayingCard(suit.getName(), value.getName()));
-                count++;
-            }
-        }
-
         int cardNumber = 0;
         for (PlayingCard playingCard : deck.getDeck()) {
-            String suitName = playingCard.getSuit();
-
-            result[cardNumber] = playingCard.getFaceValue() + " of " + suitName;
+            result[cardNumber] = playingCard.toString();
             cardNumber++;
         }
 
