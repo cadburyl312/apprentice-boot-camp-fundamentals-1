@@ -1,6 +1,8 @@
 package cards;
 
-public class AnimalCard {
+import cards.interfaces.Card;
+
+public class AnimalCard implements Card {
 
     private final Animal animal;
 
@@ -8,8 +10,18 @@ public class AnimalCard {
         this.animal = animal;
     }
 
-    public boolean snap( AnimalCard otherCard ){
-        return otherCard != null && this.animal.equals(otherCard.animal);
+    public boolean snap( Card otherCard ){
+
+        if (otherCard != null) {
+            if (otherCard instanceof AnimalCard) {
+                AnimalCard other = (AnimalCard) otherCard;
+                return this.animal.equals(other.animal);
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
     }
 
     @Override

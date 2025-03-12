@@ -19,7 +19,6 @@ public class Cards {
             result[cardNumber] = playingCard.toString();
             cardNumber++;
         }
-
         return result;
     }
 }

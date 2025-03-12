@@ -1,12 +1,15 @@
 package cards;
 
+import cards.interfaces.Card;
+import cards.interfaces.Deck;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class AnimalDeck {
+class AnimalDeck implements Deck {
 
-    private List<AnimalCard> cards;
+    private List<Card> cards;
 
     public AnimalDeck() {
         cards = new ArrayList<>();
@@ -23,13 +26,13 @@ class AnimalDeck {
     public String[] getCards() {
         String[] result = new String[cards.size()];
         for (int i = 0; i < cards.size(); i++) {
-            AnimalCard card = cards.get(i);
+            Card card = cards.get(i);
             result[i] = card.toString();
         }
         return result;
     }
 
-    public AnimalCard deal() {
+    public Card deal() {
         return cards.remove(0);
     }
 }
